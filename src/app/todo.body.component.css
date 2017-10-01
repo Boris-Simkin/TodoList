@@ -1,0 +1,89 @@
+.todo-body{
+    /* shaddow */
+    -webkit-box-shadow: 4px 5px 34px -1px rgba(0,0,0,0.52);
+    -moz-box-shadow: 4px 5px 34px -1px rgba(0,0,0,0.52);
+    box-shadow: 4px 5px 34px -1px rgba(0,0,0,0.52);
+    /* curved edge */
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 0px solid #000000;
+    padding: 10px;
+}
+
+.items-left{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.items-left:hover {
+    cursor: default;
+}
+
+.items {
+    max-height: 300px;
+    overflow-x: auto;
+}
+
+.body-bottom {
+    font-size: small;
+    color: darkgray;
+    margin-top: 9px;
+    margin-bottom: 3px;
+    min-height: 18px;
+}
+
+.clear-uncompleted {
+    float:right;
+    color: darkgray;
+}
+
+.notepad-name{
+    font-size: 22px;
+    color: gray;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: dashed gray;
+    margin-bottom: 15px;
+}
+
+.add-collection{
+    float: right;
+    background-image:url('../assets/add.png'); 
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
+
+.change-collection{
+    float: right;
+    background-image:url('../assets/down-arrow.png'); 
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
+
+.collection-color{
+    float: right;
+    background-image:url('../assets/brush.png'); 
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
+
+.color-bar {
+    height: 20px;
+    width: 90px;
+    border: solid;
+    border-color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}

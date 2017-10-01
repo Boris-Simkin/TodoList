@@ -1,0 +1,13 @@
+.mycheckbox {
+    display: inline-block;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+}
+
+.checked{
+    background-image: url('../assets/checkbox_checked.png'); 
+}
+.unchecked{
+    background-image: url('../assets/checkbox_unchecked.png'); 
+}

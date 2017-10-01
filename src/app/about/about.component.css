@@ -1,0 +1,10 @@
+.myTitle{
+    display:block;
+    margin:auto;
+}
+
+.aboutBody{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}

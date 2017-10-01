@@ -1,0 +1,44 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+            <div class="todo-body" [ngStyle]="{'background-color': currentCollection.color}">
+
+                  <app-input [message]="newNotebook" (submit)="addCollection($event)">
+                  </app-input>
+
+                  <div class="notepad-name">
+                        {{currentCollection.collectionName}}
+                        <span class="add-collection"  data-toggle="modal" data-target="#myModal"></span>
+                        <span class="dropdown">
+                              <span class="collection-color" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu">
+                                          <li *ngFor="let barColor of this._todoService.colors; let i = index"><a href="#" (click)="changeColor(barColor);preventDefault($event)"><div class="color-bar"  [ngStyle]="{'background-color': barColor }"></div></a></li>
+                                    </ul>
+                        </span>
+                        <span class="dropdown">
+                              <span class="change-collection" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu">
+                                          <li *ngFor="let col of this._todoService.collections; let i = index"><a href="#" (click)="changeCollection(i);preventDefault($event)" [ngStyle]="{'color': col.color === '#ffffff' ? 'black' : col.color}">{{col.collectionName}}</a></li>
+                                    </ul>
+                        </span>
+                  </div>
+
+                  <my-input (added)="showNewTodo($event)">
+                  </my-input>
+                  <div #items class="items">
+                        <todo-item *ngFor="let todo of this.currentCollection.todos.slice().reverse()" 
+                        [mycontent]="todo" [currentCollection]="currentCollection">
+                  </todo-item>  
+                  </div>
+                  <div class="body-bottom">
+                        <span *ngIf="itemsLeftCounter() === 1" class="items-left" >1 item left</span>  
+                        <span *ngIf="itemsLeftCounter() > 1" class="items-left" >{{itemsLeftCounter()}} items left</span>  
+                        <a href="#" *ngIf="areUncompleted()" (click) = "clearUncompleted($event)" class="clear-uncompleted" >Clear completed</a>
+                  </div>
+
+            </div>
+
+      </div>
+    </div>
+  </div>
+

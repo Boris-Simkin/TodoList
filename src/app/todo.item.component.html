@@ -1,0 +1,17 @@
+    <div (dblclick)="editTodo()" *ngIf="!editMode" class = "todo-item" #t on-mouseover="mouseover = true" on-mouseleave="mouseover = false" >
+        <my-checkbox  [isChecked]="mycontent.completed" (change)="checkboxToggle()"></my-checkbox>
+
+            <span  class="item-text" [ngClass]="{'todo-completed' : mycontent.completed}">{{mycontent.todo}}
+                    <span class="delete-item" *ngIf="mouseover" (click)="deleteItem()"></span>    
+            </span> 
+            
+    </div>
+
+    <div *ngIf="editMode" class = "edit-item">
+        <form (submit)="saveDoto(in.value)" >
+            <input #in type="text" value="{{mycontent.todo}}" >
+            <input type="submit" style="display:none;" />
+        </form>
+         <span class="save-item"  (click)="saveDoto(in.value)"></span>
+        
+    </div>
